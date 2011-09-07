@@ -76,7 +76,11 @@ Each JSON file was loaded into MongoDB with the ``mongoimport`` utility::
     user    0m31.260s
     sys     0m1.334s
     $
-    
+
+-------------------------------
+Inspecting the data in MongoDB
+-------------------------------
+
 After loading all the records, initial checks are made using the ``mongo`` 
 shell::
 
