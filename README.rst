@@ -13,7 +13,7 @@ iAH search interface at::
   http://bases.bireme.br/cgi-bin/wxislind.exe/iah/online/?IsisScript=iah/iah.xis&base=LILACS&lang=p&form=A
 
 The search returned 561,811 records, which were downloaded in batches of 
-100,000 records or less using ISO-2709 format, resulting in 6 files::
+100,000 records or less using ISO-2709 format, resulting in six files::
 
   -rw-r--r--@ 1 luciano  staff  347515476 Jul 25 22:37 lil2011-100k-00.iso
   -rw-r--r--@ 1 luciano  staff  272541385 Jul 25 22:46 lil2011-100k-01.iso
@@ -76,6 +76,20 @@ Each JSON file was loaded into MongoDB with the ``mongoimport`` utility::
     user    0m31.260s
     sys     0m1.334s
     $
+
+After all JSON files are loaded, the MongoDB files for the ``lilacs`` database
+look like this::
+
+    $ ls -lah /data/db/lilacs*
+    -rw-------  1 luciano  admin    64M Sep  6 23:27 /data/db/lilacs.0
+    -rw-------  1 luciano  admin   128M Sep  6 23:27 /data/db/lilacs.1
+    -rw-------  1 luciano  admin   256M Sep  6 23:16 /data/db/lilacs.2
+    -rw-------  1 luciano  admin   512M Sep  6 23:27 /data/db/lilacs.3
+    -rw-------  1 luciano  admin   1.0G Sep  6 23:27 /data/db/lilacs.4
+    -rw-------  1 luciano  admin   2.0G Sep  6 23:25 /data/db/lilacs.5
+    -rw-------  1 luciano  admin    16M Sep  6 23:27 /data/db/lilacs.ns
+    $
+
 
 -------------------------------
 Inspecting the data in MongoDB
