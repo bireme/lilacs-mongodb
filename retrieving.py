@@ -42,3 +42,18 @@ def test_find():
     r = db.type3.find_one({'_id': '593411'})
     assert r['v35'] == [{u'_': u'0101-6628'}]
 
+
+from stopwatch_decorator import stopwatch
+
+@stopwatch
+def distinct(collection, tag):
+    return collection.distinct(tag)
+
+def timings():
+    print distinct(db.type1, 'v5')
+    print distinct(db.type3, 'v5._')
+
+if __name__=='__main__':
+    setup()
+    timings()
+
