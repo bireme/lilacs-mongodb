@@ -1,6 +1,7 @@
 =====================================
 How LILACS was imported into MongoDB
 =====================================
+This repository has been archived. It is now read-only.
 
 ---------------------
 Fetching the records
